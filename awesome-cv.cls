@@ -108,7 +108,7 @@
 %-------------------------------------------------------------------------------
 %% Page Layout
 % Configure page margins with geometry
-\geometry{left=2.0cm, top=1.0cm, right=2.0cm, bottom=0.8cm, footskip=0.5cm}
+\geometry{left=2.0cm, top=2.2cm, right=2.0cm, bottom=2.1cm, footskip=0.5cm}
 
 %% Header & Footer
 % Set offset to each header and offset
@@ -222,7 +222,7 @@
 % Configure styles for each CV elements
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{30}{1em}\headerfontlight\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{8pt}{1em}\headerfont\color{text} #1}}
@@ -232,7 +232,7 @@
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{13pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
@@ -413,7 +413,7 @@
       \ifthenelse{\isundefined{\@mobile}}
         {}
         {
-          \faMobile\ \@mobile
+       \headerfontlight{\@mobile}
           \setbool{isstart}{false}
         }
       \ifthenelse{\isundefined{\@email}}
@@ -424,7 +424,7 @@
               \setbool{isstart}{false}
             }
             {\@headersocialsep}
-          \href{mailto:\@email}{\faEnvelope\ \@email}
+          \headerfontlight{\href{mailto:\@email}{\@email}}
         }
       \ifthenelse{\isundefined{\@homepage}}
         {}
@@ -444,7 +444,7 @@
               \setbool{isstart}{false}
             }
             {\@headersocialsep}
-          \href{https://github.com/\@github}{\faGithubSquare\ \@github}
+          \headerfontlight{\href{https://github.com/\@github}{\@github}}
         }
       \ifthenelse{\isundefined{\@gitlab}}
         {}
@@ -701,4 +701,3 @@
       \letterenclosurestyle{\@letterenclname:  \@letterenclosure} \\
     }
 }
-
